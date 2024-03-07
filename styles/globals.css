@@ -49,4 +49,16 @@
   .auth__mode {
     @apply mx-auto text-sm;
   }
+
+  .weather__temp {
+    @apply text-4xl;
+  }
+
+  .btn__secondary {
+    @apply p-2 my-5 mr-auto text-base rounded-sm text-primary border border-primary;
+  }
+
+  .weather {
+    @apply relative z-10 flex flex-col items-center justify-center w-full text-center
+  }
 }

@@ -2,7 +2,7 @@ import Head from "next/head";
 import React, { ReactNode } from "react";
 import Card from "./Card";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children, className }: { children: ReactNode, className?: string }) => {
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="main">
-        <Card className='w-3/4 lg:w-1/2'>{children}</Card>
+        <Card className={className}>{children}</Card>
       </main>
     </>
   );

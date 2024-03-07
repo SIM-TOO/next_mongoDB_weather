@@ -4,6 +4,7 @@ import InputContainer from './InputContainer';
 import emailIcon from '@/public/email_envelope_mail_send_icon.svg';
 import lockIcon from '@/public/lock_locker_icon.svg';
 import { User } from '@/models/customTypes';
+import { signIn } from 'next-auth/react';
 
 // 통신용
 async function registerUser(userData: User) {
@@ -65,7 +66,18 @@ const AuthForm = () => {
         console.error(error);
       }
     } else {
-
+      const result = await signIn('credentials', {
+        redirect: false,
+        enteredEmail,
+        enteredPassword
+      });
+      // 로그인 성공 유무
+      if (!result?.error) {
+        router.replace('/weather')
+      }
+      if (result?.error) {
+        console.error(result?.error)
+      }
     }
   };
 
