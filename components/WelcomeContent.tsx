@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import weatherIcon from '@/public/weather-icon.svg'
+import weatherIcon from '@/public/weather-icon.png'
 const WelcomeContent = () => {
   return (
     <>

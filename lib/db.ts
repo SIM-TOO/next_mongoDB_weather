@@ -1,15 +1,15 @@
 import { MongoClient } from "mongodb"
 
-// MOGODB_URI string으로 선언
+// MONGODB_URI string으로 선언
 declare var process: {
     env: {
-        MOGODB_URI: string;
+        MONGODB_URI: string;
     }
 }
 
-// 몽고 DB
+// 몽고 DB 서버 연결
 export async function connectToDatabase() {
-    const client = await MongoClient.connect(process.env.MOGODB_URI)
+    const client = await MongoClient.connect(process.env.MONGODB_URI)
     return client;
 }
 

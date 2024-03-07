@@ -29,7 +29,7 @@ const InputContainer = ({
       <input
         type={type}
         value={value}
-        className={className}
+        className={`auth__input ${className}`}
         placeholder={placeholder}
         onBlur={onBlurHandler}
         onChange={(e) => onChangeHandler(e.target?.value)}
