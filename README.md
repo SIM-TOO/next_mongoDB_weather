@@ -7,3 +7,48 @@
 - bcryptjs
 - mongodb
 - Next Auth
+
+3. .env 파일
+-MONGODB_URI = {몽고DB연결 URL}
+-NEXT_PUBLIC_OPENWEATHER_API_KEY = {OPENWEATHER API값}
+
+4. tailwind.config 작성 추가 내용
+-  backgroundImage, colors, backdropBlur
+
+<button onclick="copyCode()">복사</button>
+<pre><code id="codeBlock">
+ theme: {
+    extend: {
+      backgroundImage: {
+        main: "url('../public/clouds-bg.svg')",
+        filter: "url(../public/Rectangle.svg)",
+        elgoli: "url(../public/elgoli.svg)",
+        tempLow: "url('../public/pexels-lumn.jpg')",
+        tempHigh: "url('../public/white-cloud-blue-sky.jpg')",
+      },
+      backgroundColor: {
+        box: "rgba(255, 255, 255, 0.1)",
+        card: "rgba(29,55,76, .95)",
+      },
+      colors: {
+        primary: "#EDBA4F",
+        gray: "rgba(255, 255, 255, 0.2)",
+      },
+      backdropBlur: {
+        "4xl": "100px",
+      },
+    },
+  },
+</code></pre>
+<script>
+function copyCode() {
+    var codeBlock = document.getElementById("codeBlock");
+    var range = document.createRange();
+    range.selectNode(codeBlock);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    alert("코드가 복사되었습니다!");
+}
+</script>

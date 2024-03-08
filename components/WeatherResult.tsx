@@ -22,18 +22,18 @@ const WeatherResult = ({ weatherData }: WeatherProps) => {
 
 
   return (
-    <div className='mt-4 space-y-1'>
-      <h2 className='text-2xl font-semibold text-primary'>{`${city}, ${country}`}</h2>
+    <div className="mt-4 space-y-1">
+      <h2 className="text-2xl font-semibold text-primary">{`${city}, ${country}`}</h2>
       <Image
         src={imgSrc}
         loader={customLoader}
         alt="weather image"
-        className='mx-auto'
+        className="mx-auto"
         width={150}
         height={150}
       />
-      <p className='weather__temp weather'>{temp}°</p>
-      <p className='weather'>{weatherData.weather[0].main}</p>
+      <p className="weather__temp">{`${temp}°`}</p>
+      <p>{weatherData?.weather[0].main}</p>
     </div>
   )
 }

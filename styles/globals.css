@@ -55,7 +55,7 @@
   }
 
   .btn__secondary {
-    @apply p-2 my-5 mr-auto text-base rounded-sm text-primary border border-primary;
+    @apply p-2 mt-5 mr-auto text-base border rounded-sm text-primary border-primary;
   }
 
   .weather {

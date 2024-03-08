@@ -8,7 +8,6 @@ import { signIn } from 'next-auth/react';
 
 // 통신용
 async function registerUser(userData: User) {
-
   const response = await fetch("api/auth/signup", {
     method: "POST",
     body: JSON.stringify(userData),
@@ -16,13 +15,10 @@ async function registerUser(userData: User) {
       "Content-Type": "application/json",
     },
   });
-
   const data = await response.json();
-
   if (!response.ok) {
     throw new Error(data.method || '오류가 발생했습니다');
   }
-
   return data;
 }
 

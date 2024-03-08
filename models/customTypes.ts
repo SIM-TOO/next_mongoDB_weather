@@ -1,3 +1,4 @@
+
 export interface FormData {
     enteredEmail?: string;
     enteredPassword?: string;
@@ -54,4 +55,26 @@ export type WeatherData = {
     id: number;
     name: string;
     cod: number;
+}
+
+export type Cities = {
+    name: string;
+    local_names: LocalNames[];
+    lat: number;
+    lon: number;
+    country: string;
+}
+
+export type LocalNames = {
+    ar?: string;
+    ascil?: string;
+    de?: string;
+    en?: string
+    feature_name?: string;
+    fr?: string;
+}
+
+export type LoadedCities = {
+    country: string;
+    name: string;
 }

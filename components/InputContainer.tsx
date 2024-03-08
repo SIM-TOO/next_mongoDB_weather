@@ -12,7 +12,6 @@ type Props = {
   onBlurHandler?: () => void;
 }
 
-
 const InputContainer = ({
   type,
   value,

@@ -38,7 +38,7 @@ const Weather = () => {
           const weather: WeatherData = await fetchData(
             `${BASE_URL}weather?q=${city}&limit=6&appid=${API_KEY}&units=metric`
           )
-          console.log(weather);
+          // console.log(weather);
           setCurrentWeather(weather);
         } catch (error) {
           console.error(error);
@@ -49,6 +49,7 @@ const Weather = () => {
     getWeatherData();
   }, [city])
 
+  // 로그아웃
   const logoutHandler = () => {
     const data = signOut({ redirect: false, callbackUrl: '/' })
     data.then((res) => {
@@ -58,6 +59,7 @@ const Weather = () => {
 
   const cardBg = tempIsLow ? 'bg-tempLow' : 'bg-tempHigh';
 
+  // 로딩중 화면
   let weatherResiltContent = <Loading />
   if (!isLoading && !currentWeather) {
     weatherResiltContent = <p className='py-5'>Nothing Found!</p>
@@ -68,8 +70,8 @@ const Weather = () => {
 
   return (
     <Layout className={`w-3/4 ${cardBg} bg-cover bg-card bg-blend-overlay lg:w-1/4`} >
-      <div>
-        <SearchBar />
+      <div className='weather'>
+        <SearchBar onCityChange={setCity} />
         {weatherResiltContent}
         <button
           className='btn btn__secondary'
@@ -78,17 +80,16 @@ const Weather = () => {
           Logout
         </button>
       </div>
-
     </Layout>
   )
 }
 
 export default Weather
 
+// 잘못된 접근 처리
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
   console.log(session);
-
   if (!session) {
     return {
       redirect: {
@@ -97,7 +98,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       }
     }
   }
-
   return {
     props: {
       session

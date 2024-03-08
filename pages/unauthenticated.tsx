@@ -2,7 +2,7 @@ import Layout from '@/components/Layout'
 import Link from 'next/link'
 import React from 'react'
 
-// 로그인 안된 유저가 들어올때 보이는 페이지
+// 잘못된 접근
 const Unauthenticated = () => {
   return (
     <Layout className='justify-center text-center'>
