@@ -40,15 +40,3 @@
     },
   },
 </code></pre>
-<script>
-function copyCode() {
-    var codeBlock = document.getElementById("codeBlock");
-    var range = document.createRange();
-    range.selectNode(codeBlock);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-    alert("코드가 복사되었습니다!");
-}
-</script>
